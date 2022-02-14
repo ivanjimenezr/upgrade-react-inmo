@@ -9,7 +9,8 @@ import { Home } from "./Pages/Home/Home";
 import { LoginForm } from "./Pages/Login/Login";
 import { NavBar } from "./Pages/NavBar/NavBar";
 import Register from "./Pages/Register/Register";
-import { setUserSession, removeUserSession } from './Config/Common';
+import { setUserSession, removeUserSession, getName } from './Config/Common';
+
 import axios from 'axios'
 import { Detail } from "./Pages/Detail/Detail";
 // import AppRoutes from "./Components/AppRoutes";
@@ -25,6 +26,10 @@ function App() {
   const [loginError, setLoginError] = useState('');
   const [user, setUser] = useState('')
   
+  if (!user) {
+    const noName = getName();
+    if (noName) { setUser(noName)}
+  }
   
 
   const loginUser = (formData, prevRoute) => {
