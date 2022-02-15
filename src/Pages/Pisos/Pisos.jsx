@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import './Dashboard.scss'
+import './Pisos.scss'
 
-export const Dashboard = () => {
+export const Pisos = () => {
 	const BASEURL = "https://inmobiliaria-bootcamp.herokuapp.com";
 	const ITEMSURL = "/pisos";
   const [error, setError] = useState(null);

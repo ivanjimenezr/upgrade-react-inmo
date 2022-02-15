@@ -1,51 +1,59 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import './NavBar.scss'
 
 export const NavBar = ({ user, logoutUser}) => {
     console.log('userNav: ',user)
   return (
       <>
-        <div>NavBar</div>
-          <div className="header">
-
-        <Link to="/">
-          Home
-        </Link>
-
-        {user ?
-        <>
-        <span>
-          Hello {user}! <button onClick={() => logoutUser()}>Logout</button>
-        </span>
-        <Link to="/dashboard">Dashboard</Link>
-        </>
-        :
-        <>
-        <Link to="/login"> Login </Link>
-        <Link to="/register"> Register </Link>
-        </>
-        }
-
         
+        <div className="main-content">
+          <nav className="long">
+            <div className="first-menu">
+              <img src='https://inmobiliaria-bootcamp-front.herokuapp.com/assets/avap_corto.png' alt='Avap'/>
+              <Link to="/">
+                Home
+              </Link>
+            </div>
 
-        
+            <div className="last-menu">
+              {user ?
+              <>
+              <span>
+                Hello {user}! <button onClick={() => logoutUser()}>Logout</button>
+              </span>
+              <Link to="/pisos">Pisos</Link>
+              </>
+              :
+              <>
+              <Link to="/login"> Login </Link>
+              <Link to="/register"> Register </Link>
+              
+              </>
+              }
 
+            
+            </div>
+          </nav>
 
-          {/* <NavLink  activeclassname="active" to="/">Home</NavLink>
-            { getToken() ? null
-            :
-          <>
-          <NavLink  activeclassname="active" to="/login">Login <small>Access without token only</small></NavLink>
-          <NavLink  activeclassname="active" to="/register">Register <small>Access without token only</small></NavLink>
-          </>
-          }
+          <nav class="burger">
 
-          { getToken() ?  <NavLink  activeclassname="active" to="/dashboard">Dashboard <small>Access with token only</small></NavLink>
-          :
-          null
-          } */}
+          <img src='https://inmobiliaria-bootcamp-front.herokuapp.com/assets/avap_corto.png' alt='Avap'/>
+            <div className="menuBurger">
+              <input type="checkbox" id="menu"/>
+                <label for="menu">  ☰  </label>
+                <ul>
+            
+            <li>ww</li>
+            <li>ww</li>
+            <li>sss</li>
+        </ul>
+        </div>
+   
+    
+          </nav>
 
-         
+          
           
         </div>
       
