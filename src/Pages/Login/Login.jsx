@@ -1,6 +1,7 @@
 
 import React,{ useState } from 'react'
 import { useLocation } from "react-router-dom";
+import './Login.scss'
 
 
 const INITIAL_STATE = {
@@ -28,24 +29,30 @@ export const LoginForm = (props) => {
     
   
   return (
-    <form onSubmit={submitForm}>
-    <label>
-        <p>Email</p>
-        <input type="text" name="email" onChange={changeInput} value={formData.email} />
-      </label>
+    <>
+    <div class="content-form">
+    <div class="box-form">
+    <h2>Bienvenido</h2>
 
-      <label>
-        <p>Contraseña</p>
-        <input type="password" name="password" onChange={changeInput} value={formData.password} />
-      </label>
+    <form onSubmit={submitForm}>
+      <div>
+        <input placeholder="Email" type="text" className='input' name="email" onChange={changeInput} value={formData.email} />
+      </div>
 
       <div>
-        <button type='submit'>Log In</button>
+        
+        <input placeholder="Password" type="password" className='input' name="password" onChange={changeInput} value={formData.password} />
       </div>
+
+      
+        <button type='submit'>Log In</button>
+      
 
       {props.loginError && <div style={{color: 'red'}}>{props.loginError}</div>}
     </form>
-    
+    </div>
+</div>
+    </>
   )
 }
 

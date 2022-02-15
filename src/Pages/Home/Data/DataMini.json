@@ -1,0 +1,14 @@
+[
+  {
+    "src": "../../../Assets/minicard1.gif",
+    "titular":"Dibuja tu zona de búsqueda",
+    "descrip":"Elegir exactamente la zona que estás buscando sobre un mapa.",
+    "link":"Empezar a dibujar tu búsqueda"         
+  },
+  {
+    "src": "../../../assets/minicard2.gif",
+    "titular":"Publicar tu inmueble gratis",
+    "descrip":"Tus 2 primeros anuncios son gratis. Casas, habitaciones, oficinas… ¡Todo cabe!",
+    "link":"Poner tu anuncio gratis"           
+  }
+]

@@ -36,7 +36,7 @@ export const NavBar = ({ user, logoutUser}) => {
             </div>
           </nav>
 
-          <nav class="burger">
+          <nav className="burger">
 
           <img src='https://inmobiliaria-bootcamp-front.herokuapp.com/assets/avap_corto.png' alt='Avap'/>
             <div className="menuBurger">
@@ -44,9 +44,21 @@ export const NavBar = ({ user, logoutUser}) => {
                 <label for="menu">  ☰  </label>
                 <ul>
             
-            <li>ww</li>
-            <li>ww</li>
-            <li>sss</li>
+            <li><Link to="/">Home</Link></li>
+            
+            {user ?
+              <>
+              <li>Hello {user}! <button onClick={() => logoutUser()}>Logout</button></li>
+              <li><Link to="/pisos">Pisos</Link></li>
+              
+              </>
+              :
+              <>
+              <li><Link to="/login"> Login </Link></li>
+              <li><Link to="/register"> Register </Link></li>
+              
+              </>
+              }
         </ul>
         </div>
    

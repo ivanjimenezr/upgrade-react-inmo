@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import './Register.scss'
 
 const INITIAL_STATE = {
     name: '',
@@ -35,30 +36,37 @@ const Register = (props) => {
         
     };
     return (
-      
-        <form onSubmit={submitForm}>
-            <fieldset>
-                <label>
-                    <p>Nombre</p>
-                    <input type="text" name="name" value={state.name} onChange={handleInput} required />
-                </label>
+      <>
+<div class="content-form">
+    <div class="box-form">
+    <h2>Registro</h2>
+    <form onSubmit={submitForm}>
+            
+                <div>
+                    
+                    <input placeholder="Nombre" className="input"  type="text" name="name" value={state.name} onChange={handleInput} required />
+                </div>
 
-                <label>
-                    <p>Email</p>
-                    <input type="email" name="email" value={state.email} onChange={handleInput} required />
-                </label>
+                <div>
+                    
+                    <input placeholder="Email" className="input" type="email" name="email" value={state.email} onChange={handleInput} required />
+                </div>
 
-                <label>
-                    <p>Password</p>
-                    <input type="password" name="password" value={state.password} onChange={handleInput} required />
-                </label>
+                <div>
+                    
+                    <input placeholder="Password" className="input" type="password" name="password" value={state.password} onChange={handleInput} required />
+                </div>
 
 
                 <div>
                     <button type="submit">Guardar Perfil</button>
                 </div>
-            </fieldset>
+            
         </form>
+    </div></div>
+
+      </>
+        
     )
 };
 
